@@ -1,11 +1,19 @@
-from flask import Flask, render_template, request
+from pathlib import Path
 import pickle
+
 import numpy as np
+from flask import Flask, render_template, request
 
-app = Flask(__name__)
+BASE_DIR = Path(__file__).resolve().parent
+app = Flask(__name__, template_folder=str(BASE_DIR / "templates"))
 
-# Load trained model
-with open("model.pkl", "rb") as file:
+MODEL_PATH = BASE_DIR / "model.pkl"
+
+# Load trained model from the project root, not the current working directory.
+if not MODEL_PATH.exists():
+    raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
+
+with MODEL_PATH.open("rb") as file:
     model = pickle.load(file)
 
 

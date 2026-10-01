@@ -193,7 +193,7 @@
 
             <h2>{{ prediction }}</h2>
 
-            {% if probability %}
+            {% if probability is not none %}
             <p class="probability">
                 Placement Probability:
                 <strong>{{ "%.2f"|format(probability) }}%</strong>
