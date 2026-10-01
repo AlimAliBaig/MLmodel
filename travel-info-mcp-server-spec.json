@@ -1,0 +1,58 @@
+{
+    "transport": {
+        "kind":"streamableHttp",
+        "path":"/mcp"
+    },
+    "tools":
+    {
+        "name":"get_destinations",
+        "description":"Retrieves list of destinations",
+        "inputSchema":(
+        "type":"object",
+        )
+    },
+    {
+        "name":"get_attractions",
+        "description":"Retrieves list of attractions for the destination",
+        "inputSchema":(
+        "type":"object",
+        "properties":{
+            "destination":[(
+            "type": "string")]
+        }
+        )
+    }
+     {
+        "name":"get_hotels",
+        "description":"Retrieves list of hotels name base on destinations",
+        "inputSchema":(
+        "type":"object",
+        "properties":{
+            "destination":[(
+            "type": "string")]
+        }
+        )
+    }
+   {
+        "name":"get_restaurants",
+        "description":"Retrieves list of restaurants name",
+        "inputSchema":(
+        "type":"object",
+        "properties":{
+            "destination":[(
+            "type": "string")]
+        }
+        )
+    }
+    {
+        "name":"get_weather",
+        "description":"Retrieves list of restaurants name",
+        "inputSchema":(
+        "type":"object",
+        "properties":{
+            "destination":[(
+            "type": "string")]
+        }
+        )
+    }
+}
